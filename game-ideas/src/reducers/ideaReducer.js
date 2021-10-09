@@ -4,5 +4,7 @@ function ideaReducer(state = [], action) {
             return [...state, action.idea]
         case "REMOVE_IDEA":
             return state.filter(idea => idea.id !== action.id)
+        default:
+            return state;
     }
 }
