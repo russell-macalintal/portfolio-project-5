@@ -1,3 +1,13 @@
+// Idea Object Properties
+// - belongs to user
+// - has many comments
+// Structure
+// { 
+//     id:
+//     userId:
+//     content:
+// }
+
 export default function ideasReducer(state = [], action) {
     switch (action.type) {
         case "ADD_IDEA":
