@@ -4,3 +4,10 @@ export function addIdea(idea) {
         idea: idea
     }
 }
+
+export function removeIdea(ideaId) {
+    return {
+        type: 'REMOVE_IDEA',
+        id: ideaId
+    }
+}
