@@ -8,8 +8,8 @@ class CommentsContainer extends Component {
     render() {
         return (
             <div>
-                <CommentsInput add={this.props.add} />
-                <Comments comments={this.props.comments} remove={this.props.remove} />
+                <CommentsInput idea={this.props.idea} add={this.props.add} />
+                <Comments idea={this.props.idea} comments={this.props.comments.filter(comment => comment.ideaId === this.props.idea.id)} remove={this.props.remove} />
             </div>
         )
     }

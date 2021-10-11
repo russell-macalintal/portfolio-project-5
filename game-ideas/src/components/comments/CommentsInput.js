@@ -8,7 +8,7 @@ export default class CommentsInput extends Component {
     
     handleOnSubmit = (event) => {
         event.preventDefault();
-        const comment = {...this.state, id: uuid()}
+        const comment = {...this.state, id: uuid(), ideaId: this.props.idea.id}
         this.props.add(comment);
         this.setState({
             content: ""

@@ -11,7 +11,7 @@ const GameIdea = (props) => {
                 <h3>{idea.title}</h3>
                 <p>{idea.content}</p>
                 <button onClick={() => props.remove(idea.id)}>Delete</button>
-                <CommentsContainer />
+                <CommentsContainer idea={idea} />
             </div>
         )
     } else {
