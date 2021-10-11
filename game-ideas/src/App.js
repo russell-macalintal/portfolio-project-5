@@ -9,14 +9,14 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <Router>
+      <Router>
+        <div>
           <Route exact path="/" component={Home} />
-          <Route path="/about" component={About} />
+          <Route exact path="/about" component={About} />
           <Route path="/game-ideas" render={(routerProps) => <GameIdeasContainer {...routerProps} />} />
-        </Router>
-      </div>
-    )
+        </div>
+      </Router>
+    );
   }
   
 }

@@ -1,12 +1,21 @@
 import React, { Component } from 'react';
-import GameIdea from './GameIdea';
+import { Link } from 'react-router-dom';
 
 export default class GameIdeas extends Component {
+    renderIdeas = () => {
+        return this.props.ideas.map( idea => (
+            <Link key={idea.id} to={`/game-ideas/${idea.id}`}>
+                {idea.title}
+            </Link>
+        ))
+    }
+
     render() {
         return (
             <div>
                 <h2>Game Ideas</h2>
                 <h3>Click on a title for more information</h3>
+                {this.renderIdeas()}
             </div>
         )
     }
