@@ -12,13 +12,16 @@
 
 ActiveRecord::Schema.define(version: 2021_10_12_075524) do
 
-  create_table "comments", force: :cascade do |t|
+  create_table "comments", id: false, force: :cascade do |t|
+    t.string "id"
+    t.string "ideaId"
     t.string "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "game_ideas", force: :cascade do |t|
+  create_table "game_ideas", id: false, force: :cascade do |t|
+    t.string "id"
     t.string "title"
     t.string "content"
     t.datetime "created_at", precision: 6, null: false
