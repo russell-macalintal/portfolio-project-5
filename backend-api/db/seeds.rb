@@ -50,12 +50,12 @@ comments = [
         content: "I'm conflicted. On one hand, I like fighting games, but on the other, I don't like mythology."
     },
     {
-        id: "3a",
+        id: "3b",
         ideaId: "12x",
         content: "I'm conflicted. On one hand, I like mythology, but on the other, I don't like fighting games."
     },
     {
-        id: "3a",
+        id: "3c",
         ideaId: "12x",
         content: "This is awesome! I love mythology and fighting games. This is perfect!"
     }
