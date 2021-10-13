@@ -9,12 +9,35 @@
 //     content:
 // }
 
-export default function ideasReducer(state = [], action) {
+// export default function ideasReducer(state = [], action) {
+//     switch (action.type) {
+//         case "ADD_IDEA":
+//             return [...state, action.idea]
+//         case "REMOVE_IDEA":
+//             return state.filter(idea => idea.id !== action.id)
+//         default:
+//             return state;
+//     }
+// }
+
+export default function ideasReducer(state = { list: [], loading: false }, action) {
     switch (action.type) {
         case "ADD_IDEA":
-            return [...state, action.idea]
+            return [...state, action.idea];
         case "REMOVE_IDEA":
-            return state.filter(idea => idea.id !== action.id)
+            return state.filter(idea => idea.id !== action.id);
+        case "LOADING_IDEAS":
+            return {
+                ...state,
+                list: [...state.list],
+                loading: true
+            };
+        case "ADD_IDEAS":
+            return {
+                ...state,
+                list: action.ideas,
+                loading: false
+            };
         default:
             return state;
     }

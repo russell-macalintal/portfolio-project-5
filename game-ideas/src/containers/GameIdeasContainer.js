@@ -4,9 +4,13 @@ import GameIdeas from '../components/ideas/GameIdeas';
 import GameIdea from '../components/ideas/GameIdea';
 import { Route } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { addIdea, removeIdea } from '../actions/ideasActions';
+import { addIdea, removeIdea, fetchIdeas } from '../actions/ideasActions';
 
 class GameIdeasContainer extends Component {
+    // componentDidMount() {
+    //     this.props.fetchIdeas();
+    // }
+
     render() {
         return (
             <div>
@@ -21,14 +25,15 @@ class GameIdeasContainer extends Component {
 
 const mapStateToProps = state => {
     return {
-        ideas: state.ideas
+        ideas: state.ideas.list
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
         add: idea => dispatch(addIdea(idea)),
-        remove: ideaId => dispatch(removeIdea(ideaId))
+        remove: ideaId => dispatch(removeIdea(ideaId)),
+        fetchIdeas: () => dispatch(fetchIdeas())
     }
 }
 
