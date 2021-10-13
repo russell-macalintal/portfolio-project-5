@@ -5,7 +5,7 @@ class GameIdeasController < ApplicationController
     end
 
     def create
-        game_idea = GameIdea.create(id: params[:id], title: params[:title], content: params[:content])
+        game_idea = GameIdea.create(uid: params[:uid], title: params[:title], content: params[:content])
 
         if game_idea
             render json: { 'Alert': 'Successfully Added Idea' }
@@ -16,8 +16,8 @@ class GameIdeasController < ApplicationController
 
     def destroy
         puts "Hi There"
-        puts params[:id]
-        GameIdea.find_by(id: params[:id])
+        puts params[:uid]
+        GameIdea.find(params[:uid]).destroy
         puts "GoodBye"
         puts GameIdea.all
 

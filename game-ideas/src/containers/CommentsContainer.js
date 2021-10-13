@@ -13,7 +13,7 @@ class CommentsContainer extends Component {
         return (
             <div>
                 <CommentsInput idea={this.props.idea} add={this.props.add} />
-                <Comments idea={this.props.idea} comments={this.props.comments.filter(comment => comment.ideaId === this.props.idea.id)} remove={this.props.remove} />
+                <Comments idea={this.props.idea} comments={this.props.comments.filter(comment => comment.ideaId === this.props.idea.uid)} remove={this.props.remove} />
             </div>
         )
     }

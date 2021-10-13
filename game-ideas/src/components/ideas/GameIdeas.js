@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export default class GameIdeas extends Component {
     renderIdeas = () => {
         return this.props.ideas.map( idea => (
-            <Link key={idea.id} to={`/game-ideas/${idea.id}`}>
+            <Link key={idea.uid} to={`/game-ideas/${idea.uid}`}>
                 {idea.title}
             </Link>
         ))

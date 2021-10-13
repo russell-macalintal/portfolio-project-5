@@ -9,7 +9,7 @@ export default class GamesIdeasInput extends Component {
     
     handleOnSubmit = (event) => {
         event.preventDefault();
-        const idea = {...this.state, id: uuid()}
+        const idea = {...this.state, uid: uuid()}
         this.props.add(idea);
         this.setState({
             title: "",

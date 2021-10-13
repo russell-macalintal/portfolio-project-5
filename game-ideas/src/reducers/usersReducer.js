@@ -3,7 +3,7 @@
 // - has many comments
 // Structure
 // { 
-//     id:
+//     uid:
 //     username:
 // }
 
@@ -13,7 +13,7 @@ export default function usersReducer(state = [], action) {
         case "ADD.USER":
             return [...state, action.user]
         case "REMOVE_USER":
-            return state.filter(user => user.id !== action.id)
+            return state.filter(user => user.uid !== action.uid)
         default:
             return state;
     }

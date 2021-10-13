@@ -1,7 +1,7 @@
 class CreateComments < ActiveRecord::Migration[6.1]
   def change
-    create_table :comments, id: false do |t|
-      t.string :id
+    create_table :comments, id: false, primary_key: :uid do |t|
+      t.string :uid
       t.string :ideaId
       t.string :content
 

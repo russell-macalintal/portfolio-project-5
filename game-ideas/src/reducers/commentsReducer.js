@@ -3,7 +3,7 @@
 // - belongs to idea
 // Structure
 // { 
-//     id:
+//     uid:
 //     userId:
 //     ideaId:
 //     content:
@@ -14,7 +14,7 @@
 //         case "ADD_COMMENT":
 //             return [...state, action.comment]
 //         case "REMOVE_COMMENT":
-//             return state.filter(comment => comment.id !== action.id)
+//             return state.filter(comment => comment.uid !== action.uid)
 //         default:
 //             return state;
 //     }
@@ -25,7 +25,7 @@ export default function commentsReducer(state = { list: [], loading: false }, ac
         case "ADD_COMMENT":
             return [...state, action.comment];
         case "REMOVE_COMMENT":
-            return state.filter(comment => comment.id !== action.id);
+            return state.filter(comment => comment.uid !== action.uid);
         case "LOADING_COMMENTS":
             return {
                 ...state,

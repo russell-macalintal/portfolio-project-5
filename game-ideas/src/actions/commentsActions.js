@@ -8,7 +8,7 @@ export function addComment(comment) {
 export function removeComment(commentId) {
     return {
         type: 'REMOVE_COMMENT',
-        id: commentId
+        uid: commentId
     }
 }
 

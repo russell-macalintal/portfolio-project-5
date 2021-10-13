@@ -3,7 +3,7 @@
 // - has many comments
 // Structure
 // { 
-//     id:
+//     uid:
 //     userId:
 //     title:
 //     content:
@@ -14,7 +14,7 @@
 //         case "ADD_IDEA":
 //             return [...state, action.idea]
 //         case "REMOVE_IDEA":
-//             return state.filter(idea => idea.id !== action.id)
+//             return state.filter(idea => idea.uid !== action.uid)
 //         default:
 //             return state;
 //     }
@@ -31,7 +31,7 @@ export default function ideasReducer(state = { list: [], loading: false }, actio
         case "REMOVE_IDEA":
             return {
                 ...state,
-                list: state.list.filter(idea => idea.id !== action.id),
+                list: state.list.filter(idea => idea.uid !== action.uid),
                 loading: false
             };
         case "LOADING_IDEAS":

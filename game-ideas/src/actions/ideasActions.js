@@ -30,13 +30,13 @@ export function removeIdea(ideaId) {
                 'Content-Type':'application/json',
                 'Accept':'application/json'
             },
-            body: JSON.stringify({id: ideaId})
+            body: JSON.stringify({uid: ideaId})
         };
         fetch(`http://localhost:3000/game_ideas/${ideaId}`, configObj)
             .then(response => response.json())
             .then(idea_obj => {
                 window.alert(idea_obj['Alert']);
-                // return dispatch({type: 'REMOVE_IDEA', id: ideaId});
+                // return dispatch({type: 'REMOVE_IDEA', uid: ideaId});
                 return dispatch(fetchIdeas());
             });
     }       
