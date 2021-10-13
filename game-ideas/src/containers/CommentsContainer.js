@@ -2,9 +2,13 @@ import React, { Component } from 'react';
 import CommentsInput from '../components/comments/CommentsInput';
 import Comments from '../components/comments/Comments';
 import { connect } from 'react-redux';
-import { addComment, removeComment } from '../actions/commentsActions';
+import { addComment, removeComment, fetchComments } from '../actions/commentsActions';
 
 class CommentsContainer extends Component {
+    componentDidMount() {
+        this.props.fetchComments();
+    }
+
     render() {
         return (
             <div>
@@ -17,14 +21,15 @@ class CommentsContainer extends Component {
 
 const mapStateToProps = state => {
     return {
-        comments: state.comments
+        comments: state.comments.list
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
         add: comment => dispatch(addComment(comment)),
-        remove: commentId => dispatch(removeComment(commentId))
+        remove: commentId => dispatch(removeComment(commentId)),
+        fetchComments: () => dispatch(fetchComments())
     }
 }
 

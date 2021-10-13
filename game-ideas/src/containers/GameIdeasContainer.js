@@ -7,10 +7,10 @@ import { connect } from 'react-redux';
 import { addIdea, removeIdea, fetchIdeas } from '../actions/ideasActions';
 
 class GameIdeasContainer extends Component {
-    // componentDidMount() {
-    //     this.props.fetchIdeas();
-    // }
-
+    componentDidMount() {
+        this.props.fetchIdeas();
+    }
+    
     render() {
         return (
             <div>
