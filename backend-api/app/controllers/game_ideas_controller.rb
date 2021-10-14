@@ -15,11 +15,7 @@ class GameIdeasController < ApplicationController
     end
 
     def destroy
-        puts "Hi There"
-        puts params[:uid]
         GameIdea.find(params[:uid]).destroy
-        puts "GoodBye"
-        puts GameIdea.all
 
         render json: { 'Alert': 'Successfully Removed Idea'}
     end
