@@ -7,7 +7,7 @@ class GameIdeasController < ApplicationController
     def create
         game_idea = GameIdea.create(uid: params[:uid], title: params[:title], content: params[:content])
 
-        if game_idea
+        if game_idea.valid?
             render json: { 'Alert': 'Successfully Added Idea' }
         else
             render json: { 'Alert': 'Server Error: Idea Not Added. Please Try Again.' }
