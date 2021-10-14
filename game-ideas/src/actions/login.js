@@ -13,7 +13,7 @@ export function submitLogin(user) {
             .then(response => response.json())
             .then(user_obj => {
                 console.log(user_obj);
-                return dispatch ({type: 'SET_USER', user: user_obj.username});
+                return dispatch ({type: 'SET_USER', user: user_obj.data.attributes.username});
             });
     }
 }

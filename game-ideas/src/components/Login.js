@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {v1 as uuid} from 'uuid';
 import { connect } from 'react-redux';
 import { submitLogin } from '../actions/login';
+import { Redirect } from 'react-router-dom';
 
 class Login extends Component {
     state = {
@@ -14,7 +15,8 @@ class Login extends Component {
         this.props.submitLogin(user);
         this.setState({
             username: ""
-        })
+        });
+        <Redirect to="/game-ideas" />
     }
 
     handleOnChange = (event) => {

@@ -16,6 +16,7 @@ export default function userReducer(state = {current_user: "", submitting: false
                 submitting: true
             };
         case "SET_USER":
+            console.log(`New User: ${action.user}`)
             return {
                 ...state,
                 current_user: action.user,
