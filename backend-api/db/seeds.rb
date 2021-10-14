@@ -64,3 +64,22 @@ comments = [
 comments.each do |comment|
     Comment.create(uid: comment[:uid], ideaId: comment[:ideaId], content: comment[:content])
 end
+
+users = [
+    {
+        uid: "a10",
+        username: "bungie"
+    },
+    {
+        uid: "b20",
+        username: "miyamoto"
+    },
+    {
+        uid: "c20",
+        username: "santa_monica"
+    }
+]
+
+users.each do |user|
+    User.create(uid: user[:uid], username: user[:username])
+end

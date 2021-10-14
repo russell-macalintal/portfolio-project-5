@@ -35,7 +35,6 @@ export default function ideasReducer(state = { list: [], loading: false }, actio
                 loading: false
             };
         case "LOADING_IDEAS":
-            console.log("Loading...")
             return {
                 ...state,
                 list: [...state.list],
