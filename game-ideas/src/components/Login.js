@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {v1 as uuid} from 'uuid';
 import { connect } from 'react-redux';
-import { submitLogin } from '../actions/loginActions';
+import { submitLogin, submitLogout } from '../actions/loginActions';
 
 class Login extends Component {
     state = {
@@ -10,12 +10,16 @@ class Login extends Component {
     
     handleOnSubmit = (event) => {
         event.preventDefault();
-        const user = {...this.state, uid: uuid()}
-        this.props.submitLogin(user);
-        this.setState({
-            username: ""
-        });
-        this.props.history.push('/game-ideas');
+        if(this.props.userId === "") {
+            const user = {...this.state, uid: uuid()}
+            this.props.submitLogin(user);
+            this.setState({
+                username: ""
+            });
+            this.props.history.push('/game-ideas');
+        } else {
+            this.props.submitLogout();
+        }
     }
 
     handleOnChange = (event) => {
@@ -25,21 +29,41 @@ class Login extends Component {
     }
 
     render() {
-        return(
-            <div>
-                <form onSubmit={this.handleOnSubmit} >
-                    <input type="text" name="username" onChange={this.handleOnChange} value={this.state.username} placeholder="Enter Username"/>
-                    <input type="submit" />
-                </form>
-            </div>
-        )
+        if (this.props.userId === "") {
+            return(
+                <div>
+                    <form onSubmit={this.handleOnSubmit} >
+                        <input type="text" name="username" onChange={this.handleOnChange} value={this.state.username} placeholder="Enter Username"/>
+                        <input type="submit" />
+                    </form>
+                </div>
+            )
+        } else {
+            return(
+                <div>
+                    <h3>Logged In As: {this.props.user}</h3>
+                    <form onSubmit={this.handleOnSubmit} >
+                        <h3>Logout?</h3>
+                        <input type="submit" />
+                    </form>
+                </div>
+            )
+        }
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
-        submitLogin: user => dispatch(submitLogin(user))
+        submitLogin: user => dispatch(submitLogin(user)),
+        submitLogout: () => dispatch(submitLogout())
     }
 }
 
-export default connect(null, mapDispatchToProps)(Login);
+const mapStateToProps = state => {
+    return {
+        userId: state.user.current_userId,
+        user: state.user.current_username
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

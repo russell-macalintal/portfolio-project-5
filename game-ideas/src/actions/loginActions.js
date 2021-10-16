@@ -16,3 +16,9 @@ export function submitLogin(user) {
             });
     }
 }
+
+export function submitLogout() {
+    return {
+        type: 'REMOVE_USER'
+    }
+}

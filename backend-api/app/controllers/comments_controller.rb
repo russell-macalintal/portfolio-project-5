@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
     end
 
     def create
-        comment = Comment.create(uid: params[:uid], ideaId: params[:ideaId], content: params[:content])
+        comment = Comment.create(uid: params[:uid], userId: params[:userId], ideaId: params[:ideaId], content: params[:content])
 
         if comment
             render json: { 'Alert': 'Successfully Added Comment' }
