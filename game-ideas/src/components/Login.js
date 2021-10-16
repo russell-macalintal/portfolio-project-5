@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import {v1 as uuid} from 'uuid';
 import { connect } from 'react-redux';
-import { submitLogin } from '../actions/login';
-import { Redirect } from 'react-router-dom';
+import { submitLogin } from '../actions/loginActions';
 
 class Login extends Component {
     state = {
@@ -16,7 +15,7 @@ class Login extends Component {
         this.setState({
             username: ""
         });
-        <Redirect to="/game-ideas" />
+        this.props.history.push('/game-ideas');
     }
 
     handleOnChange = (event) => {

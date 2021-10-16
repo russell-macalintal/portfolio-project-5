@@ -22,14 +22,17 @@ export default class CommentsInput extends Component {
     }
 
     render() {
-        return(
-            <div>
-                <h3>Do You Like This Idea? Comment Below!</h3>
-                <form onSubmit={this.handleOnSubmit} >
-                    <textarea name="content" rows="4" cols="50" onChange={this.handleOnChange} value={this.state.content} placeholder="Provide Constructive Feedback Here" />
-                    <input type="submit" />
-                </form>
-            </div>
-        )
+        if (this.props.user !== "") {
+            return(
+                <div>
+                    <h3>Do You Like This Idea? Comment Below!</h3>
+                    <form onSubmit={this.handleOnSubmit} >
+                        <textarea name="content" rows="4" cols="50" onChange={this.handleOnChange} value={this.state.content} placeholder="Provide Constructive Feedback Here" />
+                        <input type="submit" />
+                    </form>
+                </div>
+            )
+        }
+        return null;
     }
 }
