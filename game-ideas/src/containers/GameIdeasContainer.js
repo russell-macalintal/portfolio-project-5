@@ -13,8 +13,8 @@ class GameIdeasContainer extends Component {
     
     render() {
         return (
-            <div>
-                <GameIdeasInput add={this.props.add} userId={this.props.userId} />
+            <div className="info-window">
+                <GameIdeasInput add={this.props.add} userId={this.props.userId} user={this.props.user} />
                 <GameIdeas ideas={this.props.ideas}/>
                 <Route exact path={`${this.props.match.url}/:ideaId`} render={routerProps => <GameIdea {...routerProps} ideas={this.props.ideas} remove={this.props.remove} user={this.props.user} userId={this.props.userId} /> } />
             </div>

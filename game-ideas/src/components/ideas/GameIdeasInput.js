@@ -26,13 +26,13 @@ export default class GamesIdeasInput extends Component {
     render() {
         if (this.props.userId !== "") {   
             return(
-                <div>
+                <div id="idea-input">
                     <h2>Share Your Own Idea!</h2>
-                    <h4>Posting As: {this.props.user}</h4>
+                    <h4>Posting As: <span className="user">{this.props.user}</span></h4>
                     <form onSubmit={this.handleOnSubmit} >
                         <input type="text" name="title" onChange={this.handleOnChange} value={this.state.title} placeholder="Give Your Idea a Title"/>
-                        <textarea name="content" rows="4" cols="50" onChange={this.handleOnChange} value={this.state.content} placeholder="Write Your Idea Here..." />
-                        <input type="submit" />
+                        <textarea name="content" onChange={this.handleOnChange} value={this.state.content} placeholder="Write Your Idea Here..." />
+                        <input className="button" type="submit" />
                     </form>
                 </div>
             )

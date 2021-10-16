@@ -9,7 +9,6 @@ export default class CommentsInput extends Component {
     handleOnSubmit = (event) => {
         event.preventDefault();
         const comment = {...this.state, uid: uuid(), userId: this.props.userId, ideaId: this.props.idea.uid}
-        console.log(comment);
         this.props.add(comment);
         this.setState({
             content: ""
@@ -28,8 +27,8 @@ export default class CommentsInput extends Component {
                 <div>
                     <h3>Do You Like This Idea? Comment Below!</h3>
                     <form onSubmit={this.handleOnSubmit} >
-                        <textarea name="content" rows="4" cols="50" onChange={this.handleOnChange} value={this.state.content} placeholder="Provide Constructive Feedback Here" />
-                        <input type="submit" />
+                        <textarea name="content" rows="4" cols="50" onChange={this.handleOnChange} value={this.state.content} placeholder="Provide Feedback Here..." />
+                        <input className="button" type="submit" value="Post" />
                     </form>
                 </div>
             )

@@ -34,7 +34,7 @@ class Login extends Component {
                 <div>
                     <form onSubmit={this.handleOnSubmit} >
                         <input type="text" name="username" onChange={this.handleOnChange} value={this.state.username} placeholder="Enter Username"/>
-                        <input type="submit" />
+                        <input className="button" type="submit" value="Login"/>
                     </form>
                 </div>
             )
@@ -44,7 +44,7 @@ class Login extends Component {
                     <h3>Logged In As: {this.props.user}</h3>
                     <form onSubmit={this.handleOnSubmit} >
                         <h3>Logout?</h3>
-                        <input type="submit" />
+                        <input className="button" type="submit" value="Logout" />
                     </form>
                 </div>
             )

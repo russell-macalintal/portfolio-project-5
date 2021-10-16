@@ -1,3 +1,4 @@
+import '../App.css';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -6,18 +7,18 @@ const NavBar = (props) => {
     console.log(props.userId);
     const renderLogin = () => {
         if (props.userId === "") {
-            return 'Login'
+            return 'LOGIN'
         } else {
-            return 'Logout'
+            return 'LOGOUT'
         }
     }
 
     return(
-        <div>
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="/about">About</NavLink>
-            <NavLink to="/game-ideas">Game Ideas</NavLink>
-            <NavLink to="/login">{renderLogin()}</NavLink>
+        <div className="nav-menu">
+            <NavLink className="menu-item" to="/">HOME</NavLink>
+            <NavLink className="menu-item" to="/about">ABOUT</NavLink>
+            <NavLink className="menu-item" to="/game-ideas">GAME IDEAS</NavLink>
+            <NavLink className="menu-item" to="/login">{renderLogin()}</NavLink>
         </div>
     )
 }

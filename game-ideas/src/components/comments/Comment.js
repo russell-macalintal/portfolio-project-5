@@ -4,7 +4,7 @@ const Comment = (props) => {
     const renderDelete = () => {
         if (props.comment.userId === props.userId) {
             return (
-                <button onClick={() => props.remove(props.comment.uid)}>Delete</button>
+                <button className="button" onClick={() => props.remove(props.comment.uid)}>Delete</button>
             )
         }
     }

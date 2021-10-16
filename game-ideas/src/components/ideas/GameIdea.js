@@ -8,7 +8,7 @@ const GameIdea = (props) => {
     const renderDelete = () => {
         if (idea.userId === props.userId) {
             return (
-                <button onClick={() => props.remove(idea.uid)}>Delete</button>
+                <button className="button" onClick={() => props.remove(idea.uid)}>Delete</button>
             )
         }
 
@@ -16,7 +16,7 @@ const GameIdea = (props) => {
 
     if (idea) {
         return (
-            <div>
+            <div className="info-section">
                 <h3>{idea.title}</h3>
                 <p>{idea.content}</p>
                 {renderDelete()}
