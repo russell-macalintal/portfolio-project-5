@@ -14,6 +14,7 @@ ActiveRecord::Schema.define(version: 2021_10_14_094622) do
 
   create_table "comments", id: false, force: :cascade do |t|
     t.string "uid"
+    t.string "userId"
     t.string "ideaId"
     t.string "content"
     t.datetime "created_at", precision: 6, null: false
@@ -22,6 +23,7 @@ ActiveRecord::Schema.define(version: 2021_10_14_094622) do
 
   create_table "game_ideas", id: false, force: :cascade do |t|
     t.string "uid"
+    t.string "userId"
     t.string "title"
     t.string "content"
     t.datetime "created_at", precision: 6, null: false

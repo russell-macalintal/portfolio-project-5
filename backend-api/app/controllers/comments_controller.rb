@@ -17,6 +17,6 @@ class CommentsController < ApplicationController
     def destroy
         Comment.find(params[:uid]).destroy
 
-        render json: { 'Alert': 'Successfully Removed Idea'}
+        render json: { 'Alert': 'Successfully Removed Comment'}
     end
 end

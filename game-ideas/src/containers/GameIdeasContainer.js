@@ -14,9 +14,9 @@ class GameIdeasContainer extends Component {
     render() {
         return (
             <div>
-                <GameIdeasInput add={this.props.add} user={this.props.user} />
+                <GameIdeasInput add={this.props.add} userId={this.props.userId} />
                 <GameIdeas ideas={this.props.ideas}/>
-                <Route exact path={`${this.props.match.url}/:ideaId`} render={routerProps => <GameIdea {...routerProps} ideas={this.props.ideas} remove={this.props.remove} user={this.props.user} /> } />
+                <Route exact path={`${this.props.match.url}/:ideaId`} render={routerProps => <GameIdea {...routerProps} ideas={this.props.ideas} remove={this.props.remove} user={this.props.user} userId={this.props.userId} /> } />
             </div>
         )
     }
@@ -25,7 +25,8 @@ class GameIdeasContainer extends Component {
 const mapStateToProps = state => {
     return {
         ideas: state.ideas.list,
-        user: state.user.current_user
+        user: state.user.current_username,
+        userId: state.user.current_userId
     }
 }
 

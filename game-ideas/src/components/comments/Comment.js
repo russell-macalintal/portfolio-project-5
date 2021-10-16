@@ -2,7 +2,7 @@ import React from 'react';
 
 const Comment = (props) => {
     const renderDelete = () => {
-        if (props.comment.uid === props.user.uid) {
+        if (props.comment.userId === props.userId) {
             return (
                 <button onClick={() => props.remove(props.comment.uid)}>Delete</button>
             )

@@ -12,8 +12,8 @@ class CommentsContainer extends Component {
     render() {
         return (
             <div>
-                <CommentsInput idea={this.props.idea} add={this.props.add} user={this.props.user} />
-                <Comments idea={this.props.idea} comments={this.props.comments.filter(comment => comment.ideaId === this.props.idea.uid)} remove={this.props.remove} user={this.props.user} />
+                <CommentsInput idea={this.props.idea} add={this.props.add} userId={this.props.userId} />
+                <Comments idea={this.props.idea} comments={this.props.comments.filter(comment => comment.ideaId === this.props.idea.uid)} remove={this.props.remove} user={this.props.user} userId={this.props.userId} />
             </div>
         )
     }
@@ -22,7 +22,8 @@ class CommentsContainer extends Component {
 const mapStateToProps = state => {
     return {
         comments: state.comments.list,
-        user: state.user.current_user
+        user: state.user.current_username,
+        userId: state.user.current_userId
     }
 }
 

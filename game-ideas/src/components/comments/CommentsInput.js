@@ -8,7 +8,7 @@ export default class CommentsInput extends Component {
     
     handleOnSubmit = (event) => {
         event.preventDefault();
-        const comment = {...this.state, uid: uuid(), ideaId: this.props.idea.uid}
+        const comment = {...this.state, uid: uuid(), userId: this.props.userId, ideaId: this.props.idea.uid}
         this.props.add(comment);
         this.setState({
             content: ""
@@ -22,7 +22,7 @@ export default class CommentsInput extends Component {
     }
 
     render() {
-        if (this.props.user !== "") {
+        if (this.props.userId !== "") {
             return(
                 <div>
                     <h3>Do You Like This Idea? Comment Below!</h3>

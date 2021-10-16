@@ -9,7 +9,7 @@ export default class GamesIdeasInput extends Component {
     
     handleOnSubmit = (event) => {
         event.preventDefault();
-        const idea = {...this.state, uid: uuid()}
+        const idea = {...this.state, uid: uuid(), userId: this.props.userId}
         this.props.add(idea);
         this.setState({
             title: "",
@@ -24,7 +24,7 @@ export default class GamesIdeasInput extends Component {
     }
 
     render() {
-        if (this.props.user !== "") {   
+        if (this.props.userId !== "") {   
             return(
                 <div>
                     <h2>Share Your Own Idea!</h2>

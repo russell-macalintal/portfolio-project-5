@@ -9,17 +9,6 @@
 //     content:
 // }
 
-// export default function commentsReducer(state = [], action) {
-//     switch (action.type) {
-//         case "ADD_COMMENT":
-//             return [...state, action.comment]
-//         case "REMOVE_COMMENT":
-//             return state.filter(comment => comment.uid !== action.uid)
-//         default:
-//             return state;
-//     }
-// }
-
 export default function commentsReducer(state = { list: [], loading: false }, action) {
     switch (action.type) {
         case "ADD_COMMENT":

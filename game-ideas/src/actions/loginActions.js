@@ -12,8 +12,7 @@ export function submitLogin(user) {
         fetch('http://localhost:3000/users', configObj)
             .then(response => response.json())
             .then(user_obj => {
-                console.log(user_obj);
-                return dispatch ({type: 'SET_USER', user: user_obj.data.attributes.username});
+                return dispatch ({type: 'SET_USER', username: user_obj.data.attributes.username, userId: user_obj.data.attributes.uid});
             });
     }
 }

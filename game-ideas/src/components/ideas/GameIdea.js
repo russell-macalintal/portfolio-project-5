@@ -6,11 +6,12 @@ const GameIdea = (props) => {
     let idea = props.ideas.find(idea => (idea.uid === props.match.params.ideaId));
 
     const renderDelete = () => {
-        if (idea.uid === props.user.uid) {
+        if (idea.userId === props.userId) {
             return (
                 <button onClick={() => props.remove(idea.uid)}>Delete</button>
             )
         }
+
     }
 
     if (idea) {
