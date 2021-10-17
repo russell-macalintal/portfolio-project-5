@@ -16,7 +16,7 @@ const GameIdea = (props) => {
 
     if (idea) {
         return (
-            <div className="info-section">
+            <div className="idea-detail">
                 <h3>{idea.title}</h3>
                 <p>{idea.content}</p>
                 {renderDelete()}

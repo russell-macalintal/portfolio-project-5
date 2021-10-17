@@ -11,7 +11,7 @@ class CommentsContainer extends Component {
 
     render() {
         return (
-            <div>
+            <div id="comment-list" className="container">
                 <CommentsInput idea={this.props.idea} add={this.props.add} userId={this.props.userId} />
                 <Comments idea={this.props.idea} comments={this.props.comments.filter(comment => comment.ideaId === this.props.idea.uid)} remove={this.props.remove} user={this.props.user} userId={this.props.userId} />
             </div>

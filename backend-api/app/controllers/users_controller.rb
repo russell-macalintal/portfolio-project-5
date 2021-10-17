@@ -4,6 +4,10 @@ class UsersController < ApplicationController
             user.uid = params[:uid]
         end
 
-        render json: UserSerializer.new(user)
+        if user.valid?
+            render json: UserSerializer.new(user)
+        else
+            render json: { 'Alert': 'Server Error: Login Failed. Please Try Again.' }
+        end
     end
 end

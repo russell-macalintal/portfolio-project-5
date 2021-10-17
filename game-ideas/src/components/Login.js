@@ -12,11 +12,11 @@ class Login extends Component {
         event.preventDefault();
         if(this.props.userId === "") {
             const user = {...this.state, uid: uuid()}
-            this.props.submitLogin(user);
             this.setState({
                 username: ""
             });
-            this.props.history.push('/game-ideas');
+            this.props.submitLogin(user);
+            // this.props.history.push('/game-ideas');
         } else {
             this.props.submitLogout();
         }
@@ -31,19 +31,18 @@ class Login extends Component {
     render() {
         if (this.props.userId === "") {
             return(
-                <div>
+                <div className="container">
                     <form onSubmit={this.handleOnSubmit} >
-                        <input type="text" name="username" onChange={this.handleOnChange} value={this.state.username} placeholder="Enter Username"/>
+                        <input id="username-input" type="text" name="username" onChange={this.handleOnChange} value={this.state.username} placeholder="Enter Username"/>
                         <input className="button" type="submit" value="Login"/>
                     </form>
                 </div>
             )
         } else {
             return(
-                <div>
-                    <h3>Logged In As: {this.props.user}</h3>
+                <div className="container">
+                    <h3>Logged In As: <span className="user-id">{this.props.user}</span></h3>
                     <form onSubmit={this.handleOnSubmit} >
-                        <h3>Logout?</h3>
                         <input className="button" type="submit" value="Logout" />
                     </form>
                 </div>

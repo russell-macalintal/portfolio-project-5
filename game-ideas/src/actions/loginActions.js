@@ -12,11 +12,16 @@ export function submitLogin(user) {
         fetch('http://localhost:3000/users', configObj)
             .then(response => response.json())
             .then(user_obj => {
+                if (user_obj['Alert']) {
+                    window.alert(user_obj['Alert']);
+                    // return dispatch({type: 'NULL'});
+                    return null;
+                }
                 return dispatch ({type: 'SET_USER', username: user_obj.data.attributes.username, userId: user_obj.data.attributes.uid});
             });
     }
 }
-
+ 
 export function submitLogout() {
     return {
         type: 'REMOVE_USER'
