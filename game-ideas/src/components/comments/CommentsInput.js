@@ -25,10 +25,10 @@ export default class CommentsInput extends Component {
         if (this.props.userId !== "") {
             return(
                 <div id="comment-input">
-                    <h3>Do You Like This Idea? Comment Below!</h3>
+                    <h4>Do You Like This Idea? Comment Below!</h4>
                     <form onSubmit={this.handleOnSubmit} >
                         <textarea id="comment-box" name="content" rows="4" cols="50" onChange={this.handleOnChange} value={this.state.content} placeholder="Provide Feedback Here..." />
-                        <input className="button" type="submit" value="Post" />
+                        <input className="button" type="submit" value="Comment" />
                     </form>
                 </div>
             )

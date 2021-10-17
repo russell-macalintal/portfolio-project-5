@@ -43,7 +43,7 @@ class Login extends Component {
                 <div className="container">
                     <h3>Logged In As: <span className="user-id">{this.props.user}</span></h3>
                     <form onSubmit={this.handleOnSubmit} >
-                        <input className="button" type="submit" value="Logout" />
+                        <input className="button delete" type="submit" value="Logout" />
                     </form>
                 </div>
             )

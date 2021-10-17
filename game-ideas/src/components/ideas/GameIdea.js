@@ -8,7 +8,10 @@ const GameIdea = (props) => {
     const renderDelete = () => {
         if (idea.userId === props.userId) {
             return (
-                <button className="button" onClick={() => props.remove(idea.uid)}>Delete</button>
+                <>
+                    <button className="button delete" onClick={() => props.remove(idea.uid)}>Delete</button>
+                    <span className="user-id">This is your post.</span>
+                </>
             )
         }
 
@@ -17,8 +20,8 @@ const GameIdea = (props) => {
     if (idea) {
         return (
             <div className="idea-detail">
-                <h3>{idea.title}</h3>
-                <p>{idea.content}</p>
+                <h2 className="idea">{idea.title}</h2>
+                <p className="content idea">{idea.content}</p>
                 {renderDelete()}
                 <CommentsContainer idea={idea} />
             </div>

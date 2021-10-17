@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
     def create
         comment = Comment.create(uid: params[:uid], userId: params[:userId], ideaId: params[:ideaId], content: params[:content])
 
-        if comment
+        if comment.valid?
             render json: { 'Alert': 'Successfully Added Comment' }
         else
             render json: { 'Alert': 'Server Error: Comment Not Added. Please Try Again.' }
