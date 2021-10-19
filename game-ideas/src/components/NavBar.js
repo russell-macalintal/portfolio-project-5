@@ -4,7 +4,6 @@ import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 const NavBar = (props) => {
-    console.log(props.userId);
     const renderLogin = () => {
         if (props.userId === "") {
             return 'LOGIN'
