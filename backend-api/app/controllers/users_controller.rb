@@ -5,7 +5,7 @@ class UsersController < ApplicationController
             user.uid = params[:uid]
         end
 
-        if user.valid?
+        if user && user.authenticate(params[:password])
             render json: UserSerializer.new(user)
         else
             render json: { 'Alert': 'Server Error: Login Failed. Please Try Again.' }

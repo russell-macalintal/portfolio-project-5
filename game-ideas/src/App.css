@@ -102,7 +102,7 @@ input[type=text] {
   border: 2px solid #000000;
 }
 
-#username-input, #title-input {
+#username-input, #password-input, #title-input {
   width: 250px;
   height: 25px;
   margin: 5px;

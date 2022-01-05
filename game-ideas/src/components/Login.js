@@ -5,7 +5,8 @@ import { submitLogin, submitLogout } from '../actions/loginActions';
 
 class Login extends Component {
     state = {
-        username: ""
+        username: "",
+        password: ""
     }
     
     handleOnSubmit = (event) => {
@@ -13,7 +14,8 @@ class Login extends Component {
         if(this.props.userId === "") {
             const user = {...this.state, uid: uuid()}
             this.setState({
-                username: ""
+                username: "",
+                password: ""
             });
             this.props.submitLogin(user);
             // this.props.history.push('/game-ideas');
@@ -34,6 +36,7 @@ class Login extends Component {
                 <div className="container">
                     <form onSubmit={this.handleOnSubmit} >
                         <input id="username-input" type="text" name="username" onChange={this.handleOnChange} value={this.state.username} placeholder="Enter Username"/>
+                        <input id="password-input" type="text" name="password" onChange={this.handleOnChange} value={this.state.password} placeholder="Enter Password"/>
                         <input className="button" type="submit" value="Login"/>
                     </form>
                 </div>
