@@ -9,32 +9,38 @@
 users = [
     {
         uid: "a10",
-        username: "bungie"
+        username: "bungie",
+        password: "masterchief"
     },
     {
         uid: "b20",
-        username: "miyamoto"
+        username: "miyamoto",
+        password: "mario"
     },
     {
         uid: "c20",
-        username: "santa_monica"
+        username: "santa_monica",
+        password: "cjgta"
     },
     {
         uid: "111",
-        username: "regular_joe"
+        username: "regular_joe",
+        password: "cupojoe"
     },
     { 
         uid: "g17",
-        username: "rude_gamer"
+        username: "rude_gamer",
+        password: "rayray"
     },
     {
         uid: "ggaaw",
-        username: "light-night"
+        username: "light-night",
+        password: "afraidofthedark"
     }
 ]
 
 users.each do |user|
-    User.create(uid: user[:uid], username: user[:username])
+    User.create(uid: user[:uid], username: user[:username], password: user[:password])
 end
 
 ideas = [
